@@ -1,0 +1,43 @@
+// -------------------------------
+// Configuration
+// -------------------------------
+
+// ------
+// variables
+
+$site-width: 1000px;
+$base-font: 1.2em;
+$section-padding: 30px;
+
+// font stacks
+$sans-stack: 'Droid Sans', Helvetica, ‘Lucida Sans’, Verdana, Arial, sans-serif;
+$serif-stack: 'Droid Serif', Georgia, Times, ‘Times New Roman’, serif;
+$mono-stack: 'Droid Sans Mono', Inconsolata, Consolas, Monaco, Courier, monospace;
+
+$font-weight-regular: 400;
+$font-weight-heavy: 700;
+$line-height: 1.5;
+
+// colors
+$site-bg-color:        rgb(255,255,255);
+$base-font-color:      #222;
+$secondary-font-color: #757575;
+
+$primary-color-dark:   #135DA3;
+$primary-color:        #2196F3;
+$primary-color-light:  #BBDEFB;
+$primary-color-text:   #FFFFFF;
+$accent-color:         #607D8B;
+
+$light-grey:           rgb(210,210,210);
+$grey:                 rgb(165,165,165);
+$dark-grey:            rgb(75,75,75);
+
+$green:                #589968;
+$dark-green:           #396443;
+$red:                  #CE5C5C;
+$dark-red:             #813E3E;
+
+// block color settings
+$header-bg-color:      $primary-color-dark;
+$footer-bg-color:      $dark-grey;
