@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom'
 import AddBook from './AddBook'
 import ListBooks from './ListBooks'
 import * as BooksAPI from './BooksAPI'
-import TransitionGroup from "react-transition-group/TransitionGroup";
 import './css/App.css'
 import './css/font-awesome.min.css'
 import Header from './Header'
