@@ -35,8 +35,18 @@ class AddBook extends Component {
     })
   }
 
-  addToShelf (evt) {
-    console.log(evt.target.id);
+  addToShelf = (book, evt) => {
+    console.log('add to list: ' + evt.target.value);
+    console.log('book:' + book.id);
+    if (evt.target.value === 'currentlyReading') {
+
+    } else if (evt.target.value === 'wantToRead') {
+
+    } else if (evt.target.value === 'read') {
+
+    } else if (evt.target.value === 'none') {
+
+    }
   }
 
   render() {

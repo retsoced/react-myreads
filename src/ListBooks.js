@@ -6,26 +6,13 @@ class ListBooks extends Component {
 	static propTypes = {
       currentlyReading: PropTypes.array.isRequired,
       wantToRead: PropTypes.array.isRequired,
-      haveRead: PropTypes.array.isRequired
-    }
-    
-    onListChange (evt) {
-      if (evt.target.value !== evt.target.defaultValue) {
-        console.log(evt.target.value);
-
-      }
-    }
-
-    moveToShelf (book) {
-
-    }
-
-    removeFromShelf (book) {
-
+      haveRead: PropTypes.array.isRequired,
+      onShelfChange: PropTypes.func.isRequired,
+      onDeleteBook: PropTypes.func.isRequired
     }
 
   	render () {
-		const { currentlyReading, wantToRead, haveRead } = this.props
+		  const { currentlyReading, wantToRead, haveRead, onShelfChange, onDeleteBook } = this.props
         
     	return (
         	<div className="list-books">
@@ -42,7 +29,7 @@ class ListBooks extends Component {
 												<div className="book-top">
 													<div className="book-cover" style={{ width: 128, height: 192, backgroundImage: 'url(' + book.imageLinks.smallThumbnail + ')' }}></div>
 													<div className="book-shelf-changer">
-														<select id={book.id} onChange={this.onListChange} defaultValue='currentlyReading'>
+														<select id={book.id} onChange={(e) => onShelfChange(e.target.value, book)} defaultValue='currentlyReading'>
 															<option value="none" disabled>Move to...</option>
 															<option value="currentlyReading">Currently Reading</option>
 															<option value="wantToRead">Want to Read</option>
@@ -70,7 +57,7 @@ class ListBooks extends Component {
 												<div className="book-top">
 													<div className="book-cover" style={{ width: 128, height: 192, backgroundImage: 'url(' + book.imageLinks.smallThumbnail + ')' }}></div>
 													<div className="book-shelf-changer">
-														<select id={book.id} onChange={this.onListChange} defaultValue='wantToRead'>
+														<select id={book.id} onChange={() => onShelfChange(book)} defaultValue='wantToRead'>
 															<option value="none" disabled>Move to...</option>
 															<option value="currentlyReading">Currently Reading</option>
 															<option value="wantToRead">Want to Read</option>
@@ -98,7 +85,7 @@ class ListBooks extends Component {
 												<div className="book-top">
 													<div className="book-cover" style={{ width: 128, height: 192, backgroundImage: 'url(' + book.imageLinks.smallThumbnail + ')' }}></div>
 													<div className="book-shelf-changer">
-														<select onChange={this.onListChange} defaultValue='read'>
+														<select onChange={() => onShelfChange(book)} defaultValue='read'>
 															<option value="none" disabled>Move to...</option>
 															<option value="currentlyReading">Currently Reading</option>
 															<option value="wantToRead">Want to Read</option>

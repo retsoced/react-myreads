@@ -14,4 +14,5 @@ My reading list react app.
 ## Running
 
 `npm install` to get the project frasmeworks and modules/cvomponents ready to use.
-`npm start` to run the local server
+
+`npm start` to run the local server.
